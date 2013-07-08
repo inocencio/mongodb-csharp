@@ -12,7 +12,9 @@ namespace MongoDB.Bson
         /// </summary>
         static BsonInfo(){
             Epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            MaxDocumentSize = 1024 * 1024 * 4; //4MB.
+            // Document size limit is now 16MB. Source: http://docs.mongodb.org/manual/core/document/
+            // Check "Document Types in MongoDB" section.
+            MaxDocumentSize = 1024 * 1024 * 16; //16MB.
         }
 
         /// <summary>
